@@ -6,11 +6,12 @@ import cv2
 import datetime
 from tkinter import messagebox
 
-
+# Read Image to be Proccessed
 def getImage():
     filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
     return filename
 
+# Save Proccessed Image
 def saveImage():
     try:
         img = cv2.cvtColor(th, cv2.COLOR_BGR2RGB)
@@ -34,6 +35,7 @@ def sel(x):
     panel.image = img2
     panel.place(x=515, y=10)
 
+# Process Image
 def proceessImage():
     filename = getImage()
     print(filename)
